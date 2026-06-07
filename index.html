@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Muk Thanyaluck — Product Designer</title>
+<meta name="description" content="Product Designer with a research-led approach, shipping healthcare and consumer products that balance user trust with measurable impact." />
+<meta property="og:title" content="Muk Thanyaluck — Product Designer" />
+<meta property="og:description" content="Portfolio of Muk Thanyaluck. Product Designer specializing in healthcare, HIS systems, and consumer mobile apps." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#fcfcfb; --bg-soft:#f4f3f0; --bg-card:#ffffff;
+    --ink:#16150f; --ink-soft:#494740; --muted:#8c897f;
+    --line:#e6e4dd; --line-strong:#d4d1c7;
+    --accent:#0f0e0a;
+    --radius:18px; --maxw:1140px;
+    --shadow:0 1px 2px rgba(0,0,0,.04),0 18px 44px rgba(0,0,0,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:78px}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  a{color:inherit; text-decoration:none}
+  img{display:block; max-width:100%}
+  h1,h2,h3,h4{margin:0; font-weight:600; letter-spacing:-.025em; line-height:1.08}
+  p{margin:0}
+  .serif{font-family:"Newsreader",Georgia,serif; font-weight:400; font-style:italic; letter-spacing:0}
+  .container{width:100%; max-width:var(--maxw); margin:0 auto; padding:0 28px}
+
+  /* ---------- Nav ---------- */
+  .nav{position:sticky; top:0; z-index:60; background:rgba(252,252,251,.82); backdrop-filter:saturate(180%) blur(14px); border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
+  .brand{font-size:19px; font-weight:600; letter-spacing:-.03em}
+  .nav-mid{display:flex; gap:30px}
+  .nav-mid a{font-size:14.5px; color:var(--ink-soft); transition:color .18s}
+  .nav-mid a:hover,.nav-mid a.active{color:var(--ink)}
+  .nav-cta{border:1px solid var(--ink); border-radius:999px; padding:8px 17px; font-size:14px; transition:background .18s,color .18s}
+  .nav-cta:hover{background:var(--ink); color:#fff}
+  @media(max-width:720px){ .nav-mid{display:none} }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:74px 0 30px}
+  .badge{display:inline-flex; align-items:center; gap:9px; font-size:13px; color:var(--ink-soft); border:1px solid var(--line-strong); border-radius:999px; padding:7px 15px; margin-bottom:34px}
+  .badge .dot{width:7px; height:7px; border-radius:50%; background:#2ecc71; box-shadow:0 0 0 4px rgba(46,204,113,.16)}
+  .hero h1{font-size:clamp(38px,6.6vw,82px); line-height:1.02; letter-spacing:-.04em; max-width:16ch}
+  .hero h1 em{font-style:normal}
+  .hero h1 .serif{font-size:.96em}
+  .hero-row{margin-top:40px; display:grid; grid-template-columns:1fr 300px; gap:48px; align-items:end}
+  .hero-lede{font-size:19px; line-height:1.62; color:var(--ink-soft); max-width:540px}
+  .hero-actions{margin-top:28px; display:flex; gap:13px; flex-wrap:wrap}
+  .hero-photo{border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--bg-soft); aspect-ratio:1/1.12}
+  .hero-photo img{width:100%; height:100%; object-fit:cover}
+  @media(max-width:760px){ .hero-row{grid-template-columns:1fr; gap:32px} .hero-photo{max-width:230px; order:-1} }
+
+  .btn{display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:13px 24px; font-size:15px; font-weight:500; transition:transform .16s,background .18s,border-color .18s,color .18s}
+  .btn-primary{background:var(--ink); color:#fff}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--line-strong); color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink); transform:translateY(-2px)}
+
+  /* ---------- Marquee ---------- */
+  .marquee{margin-top:54px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); overflow:hidden; padding:20px 0}
+  .marquee-track{display:flex; gap:0; white-space:nowrap; width:max-content; animation:scroll 34s linear infinite}
+  .marquee span{font-size:18px; color:var(--ink-soft); padding:0 26px; display:inline-flex; align-items:center; gap:26px}
+  .marquee span::after{content:"✦"; color:var(--muted); font-size:12px}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ---------- Section scaffolding ---------- */
+  section{scroll-margin-top:78px}
+  .sec{padding:96px 0}
+  .kicker{font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:30px}
+  .sec-statement{font-size:clamp(28px,4.4vw,48px); letter-spacing:-.035em; line-height:1.1; max-width:18ch}
+  .sec-statement em{font-style:normal}
+
+  /* ---------- About ---------- */
+  .about{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+  .about-lede{margin-top:30px; font-size:clamp(20px,2.6vw,27px); line-height:1.45; color:var(--ink); max-width:24ch; letter-spacing:-.02em}
+  .about-cols{margin-top:56px; display:grid; grid-template-columns:1fr 1fr; gap:48px}
+  .about-cols h4{font-size:15px; letter-spacing:0; margin-bottom:12px}
+  .about-cols p{color:var(--ink-soft); font-size:16.5px; line-height:1.65}
+  .chips{margin-top:40px; display:flex; flex-wrap:wrap; gap:9px}
+  .chip{font-size:14px; border:1px solid var(--line-strong); border-radius:999px; padding:8px 15px; background:#fff}
+  @media(max-width:720px){ .about-cols{grid-template-columns:1fr; gap:30px} }
+
+  /* ---------- Work index ---------- */
+  .work-index{margin-top:44px; border-top:1px solid var(--line)}
+  .work-index a{display:grid; grid-template-columns:48px 1fr auto auto; gap:20px; align-items:center; padding:22px 4px; border-bottom:1px solid var(--line); transition:padding-left .2s,background .2s}
+  .work-index a:hover{padding-left:14px; background:linear-gradient(90deg,rgba(0,0,0,.02),transparent)}
+  .work-index .wi-num{font-size:14px; color:var(--muted)}
+  .work-index .wi-title{font-size:clamp(20px,2.4vw,28px); font-weight:600; letter-spacing:-.02em}
+  .work-index .wi-meta{font-size:14px; color:var(--muted)}
+  .work-index .wi-arrow{font-size:18px; color:var(--ink); transition:transform .2s}
+  .work-index a:hover .wi-arrow{transform:translate(4px,-4px)}
+  @media(max-width:640px){ .work-index a{grid-template-columns:34px 1fr auto; gap:12px} .work-index .wi-meta{display:none} }
+
+  /* ---------- Case study ---------- */
+  .case{padding:90px 0; border-top:1px solid var(--line)}
+  .case-tag{font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:18px}
+  .case-head{display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:start}
+  .case-head h3{font-size:clamp(30px,4.4vw,52px); letter-spacing:-.035em}
+  .case-head .desc{margin-top:18px; font-size:19px; line-height:1.55; color:var(--ink-soft)}
+  .case-meta{display:grid; grid-template-columns:1fr 1fr; gap:22px 24px}
+  .case-meta .k{font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); margin-bottom:6px}
+  .case-meta .v{font-size:15.5px; font-weight:500}
+  @media(max-width:760px){ .case-head{grid-template-columns:1fr; gap:26px} }
+
+  .case-cover{margin-top:40px; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--bg-soft)}
+  .case-cover img{width:100%; height:auto}
+
+  .step{display:grid; grid-template-columns:200px 1fr; gap:36px; padding:50px 0; border-bottom:1px solid var(--line)}
+  .step:last-of-type{border-bottom:none}
+  .step-label{font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); padding-top:4px}
+  .step-label b{display:block; color:var(--ink); font-size:21px; letter-spacing:-.02em; text-transform:none; margin-top:6px; font-weight:600}
+  .step-body p{font-size:17.5px; line-height:1.7; color:var(--ink-soft)}
+
+  .rlist{list-style:none; margin:0; padding:0; display:grid; gap:14px; counter-reset:r}
+  .rlist li{position:relative; padding-left:46px; font-size:16.5px; line-height:1.55; color:var(--ink-soft); counter-increment:r}
+  .rlist li::before{content:counter(r,decimal-leading-zero); position:absolute; left:0; top:1px; font-size:13px; font-weight:600; color:var(--muted); border:1px solid var(--line-strong); border-radius:999px; width:30px; height:30px; display:flex; align-items:center; justify-content:center}
+
+  .quote{font-family:"Newsreader",Georgia,serif; font-style:italic; font-size:clamp(22px,3vw,32px); line-height:1.4; color:var(--ink); letter-spacing:-.01em}
+  .quote .mark{color:var(--muted)}
+
+  .sol-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+  .sol{border:1px solid var(--line); border-radius:14px; padding:22px 22px 24px; background:var(--bg-card)}
+  .sol .n{font-size:13px; color:var(--muted); font-weight:600; margin-bottom:10px}
+  .sol p{font-size:16px; line-height:1.55; color:var(--ink-soft)}
+  @media(max-width:640px){ .sol-grid{grid-template-columns:1fr} .step{grid-template-columns:1fr; gap:14px; padding:38px 0} }
+
+  .metrics{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  .metric{border:1px solid var(--line); border-radius:14px; padding:24px 22px; background:var(--bg-card)}
+  .metric .num{font-size:clamp(30px,4vw,42px); font-weight:600; letter-spacing:-.04em}
+  .metric .lbl{font-size:14px; color:var(--muted); margin-top:8px; line-height:1.4}
+  @media(max-width:640px){ .metrics{grid-template-columns:1fr} }
+
+  .gallery{margin-top:34px; display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+  .gallery figure{margin:0; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--bg-soft)}
+  .gallery img{width:100%; height:auto}
+  .gallery figcaption{font-size:13px; color:var(--muted); padding:11px 15px; border-top:1px solid var(--line); background:#fff}
+  @media(max-width:640px){ .gallery{grid-template-columns:1fr} }
+
+  .case-foot{margin-top:38px}
+  .discuss{display:inline-flex; align-items:center; gap:8px; font-size:15px; font-weight:500; border-bottom:1px solid var(--ink); padding-bottom:3px}
+  .discuss .arrow{transition:transform .2s}
+  .discuss:hover .arrow{transform:translateX(4px)}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--ink); color:#f4f3ef; border-top:1px solid var(--ink)}
+  .contact .kicker{color:#9b988e}
+  .contact h2{font-size:clamp(32px,5.4vw,62px); letter-spacing:-.04em; line-height:1.05; max-width:16ch}
+  .contact h2 em{font-style:normal; color:#fff}
+  .contact .serif{color:#cfcbbf}
+  .contact p{margin-top:26px; font-size:18px; line-height:1.6; color:#bdbab0; max-width:52ch}
+  .contact-actions{margin-top:38px; display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+  .c-mail{font-size:clamp(20px,3vw,30px); font-weight:600; letter-spacing:-.02em; color:#fff; border-bottom:1px solid #55524a; padding-bottom:4px; transition:border-color .2s}
+  .c-mail:hover{border-color:#fff}
+  .c-link{border:1px solid #44423b; border-radius:999px; padding:11px 20px; font-size:15px; color:#e9e7df; transition:background .2s,color .2s}
+  .c-link:hover{background:#fff; color:var(--ink)}
+
+  /* ---------- Footer ---------- */
+  .footer{background:var(--ink); color:#85827a; border-top:1px solid #2a2823}
+  .footer-inner{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; padding:30px 0; font-size:14px}
+
+  ::selection{background:#16150f; color:#fff}
+</style>
+</head>
+<body id="top">
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">Muk.</a>
+    <nav class="nav-mid">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Let's talk</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <span class="badge"><span class="dot"></span> Available for full-time Product Designer roles · Bangkok / Remote</span>
+    <h1>Designing products people <span class="serif">actually trust</span> with their health, money &amp; time.</h1>
+    <div class="hero-row">
+      <div>
+        <p class="hero-lede">I'm Muk Thanyaluck — a Product Designer with a research-first approach, shipping healthcare platforms, HIS systems, and consumer apps. Trained in marketing research, fluent in Japanese.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">See selected work →</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="https://framerusercontent.com/images/gNDMFQVIhuUr7YwgqmLSDSOOrf0.png" alt="Muk Thanyaluck" />
+      </div>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Healthcare</span><span>HIS Systems</span><span>UX Research</span><span>Design Systems</span><span>Mobile Apps</span><span>Service Design</span><span>Marketing Research</span><span>日本語</span>
+      <span>Healthcare</span><span>HIS Systems</span><span>UX Research</span><span>Design Systems</span><span>Mobile Apps</span><span>Service Design</span><span>Marketing Research</span><span>日本語</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="sec about">
+  <div class="container">
+    <div class="kicker">01 — About</div>
+    <p class="about-lede">I make complex systems feel human — turning hospital records, recycling logistics, and cross-border bookings into products people can navigate <em>without thinking.</em></p>
+    <div class="about-cols">
+      <div>
+        <h4>How I work</h4>
+        <p>I start every project by talking to users, then pressure-test ideas with data before pixels. My research roots mean I bring stakeholders evidence, not opinions — and ship designs that survive contact with reality.</p>
+      </div>
+      <div>
+        <h4>What I bring to a team</h4>
+        <p>End-to-end ownership from discovery to handoff, fluent collaboration with PMs, engineers, and BAs, and a calm bias toward shipping. I work in Figma, think in systems, and write specs engineers actually want to build from.</p>
+      </div>
+    </div>
+    <div class="chips">
+      <span class="chip">User Research</span>
+      <span class="chip">Information Architecture</span>
+      <span class="chip">Interaction Design</span>
+      <span class="chip">Design Systems</span>
+      <span class="chip">Usability Testing</span>
+      <span class="chip">Prototyping</span>
+      <span class="chip">Figma</span>
+      <span class="chip">Maze</span>
+      <span class="chip">Miro</span>
+      <span class="chip">日本語</span>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="sec">
+  <div class="container">
+    <div class="kicker">02 — Selected Work</div>
+    <h2 class="sec-statement">Four products. <span class="serif">One pattern</span> — start with the human, end with the metric.</h2>
+
+    <nav class="work-index">
+      <a href="#case-01"><span class="wi-num">01</span><span class="wi-title">Health Wallet</span><span class="wi-meta">Mobile App</span><span class="wi-arrow">↗</span></a>
+      <a href="#case-02"><span class="wi-num">02</span><span class="wi-title">EVER Medical Tourism</span><span class="wi-meta">Responsive Web</span><span class="wi-arrow">↗</span></a>
+      <a href="#case-03"><span class="wi-num">03</span><span class="wi-title">Hospital Information System</span><span class="wi-meta">Desktop HIS</span><span class="wi-arrow">↗</span></a>
+      <a href="#case-04"><span class="wi-num">04</span><span class="wi-title">Green Cycle</span><span class="wi-meta">Mobile App</span><span class="wi-arrow">↗</span></a>
+    </nav>
+  </div>
+
+  <!-- CASE 01 -->
+  <article id="case-01" class="case">
+    <div class="container">
+      <div class="case-tag">Case 01 · 2024</div>
+      <div class="case-head">
+        <div>
+          <h3>Health Wallet</h3>
+          <p class="desc">A blockchain-backed personal health record that gives patients ownership of their medical data.</p>
+        </div>
+        <div class="case-meta">
+          <div><div class="k">Role</div><div class="v">Product Designer · Lead UX Research</div></div>
+          <div><div class="k">Platform</div><div class="v">Mobile App</div></div>
+          <div><div class="k">Timeline</div><div class="v">6 months</div></div>
+          <div><div class="k">Tools</div><div class="v">Figma, Miro, Maze</div></div>
+        </div>
+      </div>
+      <div class="case-cover"><img src="https://framerusercontent.com/images/3tPEJOx1mZ94kmQ1cjmIc69vo.png" alt="Health Wallet" /></div>
+
+      <div class="step">
+        <div class="step-label">01<b>Problem</b></div>
+        <div class="step-body"><p>Patients across Thai hospitals had no single, trustworthy place to access their own medical history — records were fragmented, paper-bound, and rarely portable between providers.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-label">02<b>Research</b></div>
+        <div class="step-body">
+          <ul class="rlist">
+            <li>Ran a 200-participant quantitative survey on Maze covering healthcare habits, data access, and tech adoption.</li>
+            <li>Conducted in-depth interviews with primary caregivers and chronically ill patients aged 25–54 in Bangkok.</li>
+            <li>Mapped the end-to-end hospital-transfer journey to identify where patient data fell out of sync.</li>
+            <li>Benchmarked PDPA-compliant health record products to validate consent and data-sharing patterns.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">03<b>Insight</b></div>
+        <div class="step-body"><p class="quote"><span class="mark">“</span>People don't want more health data — they want one calm place to find what matters, and the confidence to share it on their own terms.<span class="mark">”</span></p></div>
+      </div>
+      <div class="step">
+        <div class="step-label">04<b>Solution</b></div>
+        <div class="step-body">
+          <div class="sol-grid">
+            <div class="sol"><div class="n">/01</div><p>Designed a wallet metaphor: medical records, prescriptions, and consents live as cards a user can hand to a provider.</p></div>
+            <div class="sol"><div class="n">/02</div><p>Built a granular consent flow so patients authorize hospitals per-visit, per-record — not blanket access.</p></div>
+            <div class="sol"><div class="n">/03</div><p>Created a caregiver mode so a daughter can manage her parent's records without compromising privacy.</p></div>
+            <div class="sol"><div class="n">/04</div><p>Integrated virtual consult, e-prescription, and health education into one tab system to reduce cognitive load.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">05<b>Impact</b></div>
+        <div class="step-body">
+          <div class="metrics">
+            <div class="metric"><div class="num">94%</div><div class="lbl">Task success in usability tests</div></div>
+            <div class="metric"><div class="num">−38%</div><div class="lbl">Time to retrieve records</div></div>
+            <div class="metric"><div class="num">4.7</div><div class="lbl">Avg. trust score (out of 5)</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure><img src="https://framerusercontent.com/images/PPf9aXRh8eERnmPsyC3NUsQyh4.png" alt="Primary persona" /><figcaption>Primary persona synthesised from 200 survey responses.</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/rKIgRoQuBqY7xIvBRfKirhGENw.png" alt="Empathy mapping" /><figcaption>Empathy &amp; affinity mapping in Miro.</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/cYdQ66V4745J9e0o90KIWVWUxx8.png" alt="Survey design" /><figcaption>Survey design across four behaviour topics (Maze).</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/PKcNf4zC60Unn96pU8K0anMSuLk.png" alt="Affinity clusters" /><figcaption>Affinity clusters surfacing caregiver behaviour.</figcaption></figure>
+      </div>
+
+      <div class="case-foot"><a class="discuss" href="#contact">Discuss this project <span class="arrow">→</span></a></div>
+    </div>
+  </article>
+
+  <!-- CASE 02 -->
+  <article id="case-02" class="case">
+    <div class="container">
+      <div class="case-tag">Case 02 · 2024</div>
+      <div class="case-head">
+        <div>
+          <h3>EVER Medical Tourism</h3>
+          <p class="desc">UX audit and redesign of a one-stop medical-tourism booking platform serving global patients.</p>
+        </div>
+        <div class="case-meta">
+          <div><div class="k">Role</div><div class="v">Product Designer · UX Audit Lead</div></div>
+          <div><div class="k">Platform</div><div class="v">Responsive Web</div></div>
+          <div><div class="k">Timeline</div><div class="v">3 months</div></div>
+          <div><div class="k">Tools</div><div class="v">Figma, Miro</div></div>
+        </div>
+      </div>
+      <div class="case-cover"><img src="https://framerusercontent.com/images/exAnVUMhOjWwIiZWOjnrNa599k.png" alt="EVER Medical Tourism" /></div>
+
+      <div class="step">
+        <div class="step-label">01<b>Problem</b></div>
+        <div class="step-body"><p>International patients booked treatment abroad with high anxiety — the existing site buried pricing, hid credentials, and made it nearly impossible to compare clinics side by side.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-label">02<b>Research</b></div>
+        <div class="step-body">
+          <ul class="rlist">
+            <li>Heuristic audit of every key flow, color-coded by severity (quick-fix, needs-improvement, good-default, new-idea).</li>
+            <li>Competitive teardown of 8 medical-tourism and aesthetic platforms across user flow, monetization, and trust signals.</li>
+            <li>Stakeholder voting workshop with 5 points per participant to prioritize the most painful flows.</li>
+            <li>Synthesized findings into a prioritized fix list anchored to revenue and conversion impact.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">03<b>Insight</b></div>
+        <div class="step-body"><p class="quote"><span class="mark">“</span>Trust is the product. Every screen either earns it — with credentials, real prices, and reviewer faces — or quietly loses the booking.<span class="mark">”</span></p></div>
+      </div>
+      <div class="step">
+        <div class="step-label">04<b>Solution</b></div>
+        <div class="step-body">
+          <div class="sol-grid">
+            <div class="sol"><div class="n">/01</div><p>Restructured Home, Clinic Explore, Clinic Profile, and Treatment Explore as a single trust-building funnel.</p></div>
+            <div class="sol"><div class="n">/02</div><p>Surfaced doctor credentials, certifications, and verified reviews above the fold on every clinic profile.</p></div>
+            <div class="sol"><div class="n">/03</div><p>Designed a transparent price-comparison module so users can weigh treatment, travel, and recovery in one view.</p></div>
+            <div class="sol"><div class="n">/04</div><p>Standardized the booking pattern so the same primary action lives in the same place across all flows.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">05<b>Impact</b></div>
+        <div class="step-body">
+          <div class="metrics">
+            <div class="metric"><div class="num">+42%</div><div class="lbl">Projected booking conversion</div></div>
+            <div class="metric"><div class="num">23</div><div class="lbl">Critical UX issues resolved</div></div>
+            <div class="metric"><div class="num">4 flows</div><div class="lbl">Rebuilt end-to-end</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure><img src="https://framerusercontent.com/images/5c3JIXmSyD3kZnqEAytVmFSYr6A.png" alt="Sitemap audit" /><figcaption>Sitemap audit with colour-coded issues and inline fixes.</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/MJah5rjpLq5tnQQMMDsh77w03I.png" alt="Competitor benchmark" /><figcaption>Competitor benchmark across 8 platforms.</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/vwvHWH1cJYp9x0VqXXF6afeoyQ.png" alt="Prioritisation vote" /><figcaption>Dot-voting to prioritise the most critical flows.</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/P1FZMKTV77XE2t3Wv1SHNw6nIg.png" alt="Synthesis" /><figcaption>Synthesised insights feeding the recommendation set.</figcaption></figure>
+      </div>
+
+      <div class="case-foot"><a class="discuss" href="#contact">Discuss this project <span class="arrow">→</span></a></div>
+    </div>
+  </article>
+
+  <!-- CASE 03 -->
+  <article id="case-03" class="case">
+    <div class="container">
+      <div class="case-tag">Case 03 · 2023</div>
+      <div class="case-head">
+        <div>
+          <h3>Hospital Information System</h3>
+          <p class="desc">Enterprise HIS modules designed sprint-by-sprint for a Thai government hospital network.</p>
+        </div>
+        <div class="case-meta">
+          <div><div class="k">Role</div><div class="v">Product Designer · UI Systems</div></div>
+          <div><div class="k">Platform</div><div class="v">Desktop HIS</div></div>
+          <div><div class="k">Timeline</div><div class="v">1 week per module</div></div>
+          <div><div class="k">Tools</div><div class="v">Figma, Design Tokens</div></div>
+        </div>
+      </div>
+      <div class="case-cover"><img src="https://framerusercontent.com/images/GE9U8hIrp8eTbeUaq0w71MUE3M.png" alt="Hospital Information System" /></div>
+
+      <div class="step">
+        <div class="step-label">01<b>Problem</b></div>
+        <div class="step-body"><p>Clinicians were losing minutes per patient navigating an inconsistent legacy HIS — every module looked, behaved, and failed differently, and engineering had no shared design language to build against.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-label">02<b>Research</b></div>
+        <div class="step-body">
+          <ul class="rlist">
+            <li>Partnered with Business Analysts to translate dense clinical requirements into testable interaction specs.</li>
+            <li>Shadowed doctors and nurses across consulting, ordering, and antenatal flows to map real-world constraints.</li>
+            <li>Audited existing modules for inconsistent components, dead-end states, and missing data hierarchies.</li>
+            <li>Established a component contract with engineering so handoff was reusable, not re-built every sprint.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">03<b>Insight</b></div>
+        <div class="step-body"><p class="quote"><span class="mark">“</span>In a clinical setting, consistency isn't a nice-to-have — it's how you prevent the kind of error that costs a patient.<span class="mark">”</span></p></div>
+      </div>
+      <div class="step">
+        <div class="step-label">04<b>Solution</b></div>
+        <div class="step-body">
+          <div class="sol-grid">
+            <div class="sol"><div class="n">/01</div><p>Designed the Consulting → Iodine Clinic interface with information density tuned for fast, repeated use.</p></div>
+            <div class="sol"><div class="n">/02</div><p>Built an Order Set management module that lets clinicians create, edit, and reuse complex order bundles.</p></div>
+            <div class="sol"><div class="n">/03</div><p>Delivered an Antenatal Care &amp; Labor Room flow covering pregnancy tracking through delivery in one record.</p></div>
+            <div class="sol"><div class="n">/04</div><p>Documented patterns into a reusable component library so engineering shipped UI consistently across sprints.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">05<b>Impact</b></div>
+        <div class="step-body">
+          <div class="metrics">
+            <div class="metric"><div class="num">12+</div><div class="lbl">HIS modules shipped</div></div>
+            <div class="metric"><div class="num">1 wk</div><div class="lbl">Average sprint cadence</div></div>
+            <div class="metric"><div class="num">0</div><div class="lbl">Critical UI regressions in QA</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure><img src="https://framerusercontent.com/images/3wFo5oYKcAeLXcmq4GNzeUFg0E.png" alt="Consultation module" /><figcaption>Consultation module — Iodine Clinic.</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/PLzagXOwXcLIFMyOlk4y2kfpE4.png" alt="Order Set Setting" /><figcaption>Order Set management.</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/49TSwhQy2dojinGBYUTw27fNwQI.png" alt="EMAR" /><figcaption>EMAR — medication administration record.</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/ATpeKZrviA1fKVEDX8tQEyXWMg.png" alt="Registration" /><figcaption>Registration — patient logging &amp; HN creation.</figcaption></figure>
+      </div>
+
+      <div class="case-foot"><a class="discuss" href="#contact">Discuss this project <span class="arrow">→</span></a></div>
+    </div>
+  </article>
+
+  <!-- CASE 04 -->
+  <article id="case-04" class="case">
+    <div class="container">
+      <div class="case-tag">Case 04 · 2023</div>
+      <div class="case-head">
+        <div>
+          <h3>Green Cycle</h3>
+          <p class="desc">An on-demand recycling pickup app turning household waste into income for time-poor city dwellers.</p>
+        </div>
+        <div class="case-meta">
+          <div><div class="k">Role</div><div class="v">Product Designer · End-to-End</div></div>
+          <div><div class="k">Platform</div><div class="v">Mobile App</div></div>
+          <div><div class="k">Timeline</div><div class="v">6 weeks</div></div>
+          <div><div class="k">Tools</div><div class="v">Figma</div></div>
+        </div>
+      </div>
+      <div class="case-cover"><img src="https://framerusercontent.com/images/3CtxqoB6Xx7Fnk3W6Ia26KyVwo.png" alt="Green Cycle" /></div>
+
+      <div class="step">
+        <div class="step-label">01<b>Problem</b></div>
+        <div class="step-body"><p>COVID-era online shopping created mountains of packaging waste at home, but recycling centers required time, transport, and effort that working professionals simply didn't have.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-label">02<b>Research</b></div>
+        <div class="step-body">
+          <ul class="rlist">
+            <li>Diary study with work-from-home professionals tracking waste accumulation and disposal friction over two weeks.</li>
+            <li>Interviewed independent recyclers and small collection businesses to understand the supply side of the market.</li>
+            <li>Benchmarked food-delivery and on-demand service patterns — the mental model users already trusted.</li>
+            <li>Validated willingness-to-pay vs. willingness-to-be-paid for different waste categories.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">03<b>Insight</b></div>
+        <div class="step-body"><p class="quote"><span class="mark">“</span>People don't refuse to recycle — they refuse to add another errand. Pickup at their door, on their schedule, flips the entire equation.<span class="mark">”</span></p></div>
+      </div>
+      <div class="step">
+        <div class="step-label">04<b>Solution</b></div>
+        <div class="step-body">
+          <div class="sol-grid">
+            <div class="sol"><div class="n">/01</div><p>Designed a flow where users log waste type and weight, get an instant price estimate, and book a pickup slot.</p></div>
+            <div class="sol"><div class="n">/02</div><p>Built clear visual guides for sorting and preparation, so users know exactly what to bag before pickup.</p></div>
+            <div class="sol"><div class="n">/03</div><p>Integrated cash and bank-transfer payouts on pickup day to remove friction and build immediate trust.</p></div>
+            <div class="sol"><div class="n">/04</div><p>Added a recycling impact dashboard so users see their personal carbon and waste reduction over time.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-label">05<b>Impact</b></div>
+        <div class="step-body">
+          <div class="metrics">
+            <div class="metric"><div class="num">−65%</div><div class="lbl">Friction vs. self-drop-off</div></div>
+            <div class="metric"><div class="num">92%</div><div class="lbl">Prototype test completion</div></div>
+            <div class="metric"><div class="num">8/8</div><div class="lbl">Users would re-book</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure><img src="https://framerusercontent.com/images/TqDLurKQ2zBgXLL2oas3jU5Kw.png" alt="User interface" /><figcaption>Final user interface.</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/AezfcJxMK8KVhedfuwYDmxeeBg.png" alt="Final product" /><figcaption>Final product screens.</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/TccoNyzo9sD7WeiiO0Z5e2Lc8.png" alt="User flow" /><figcaption>User flow for the pickup journey.</figcaption></figure>
+        <figure><img src="https://framerusercontent.com/images/kburtNTGiU7KeVNkiqPinTDENc.png" alt="Competitor analysis" /><figcaption>Competitor analysis positioning Green Cycle.</figcaption></figure>
+      </div>
+
+      <div class="case-foot"><a class="discuss" href="#contact">Discuss this project <span class="arrow">→</span></a></div>
+    </div>
+  </article>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec contact">
+  <div class="container">
+    <div class="kicker">03 — Contact</div>
+    <h2>Hiring a Product Designer who'll <span class="serif">own the outcome?</span></h2>
+    <p>I'm currently interviewing for full-time Product Designer roles. If you're building something in healthcare, fintech, or any domain where trust is the product — I'd love to hear from you.</p>
+    <div class="contact-actions">
+      <a class="c-mail" href="mailto:su.thanyaluck@gmail.com">su.thanyaluck@gmail.com</a>
+    </div>
+    <div class="contact-actions">
+      <a class="c-link" href="https://www.linkedin.com/in/thanyaluck-suksin/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="c-link" href="Resume-Thanyaluck-Suksin-2026.pdf" target="_blank" rel="noreferrer">Resume / CV</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© 2026 Muk Thanyaluck · Product Designer</span>
+    <span>Designed &amp; built with care · Bangkok 🇹🇭</span>
+  </div>
+</footer>
+
+<script>
+  // Scrollspy for nav highlight
+  const links = [...document.querySelectorAll('.nav-mid a')];
+  const map = {};
+  links.forEach(l => { const id = l.getAttribute('href').slice(1); const el = document.getElementById(id); if (el) map[id] = l; });
+  const ids = Object.keys(map);
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        if (map[e.target.id]) map[e.target.id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  ids.forEach(id => obs.observe(document.getElementById(id)));
+</script>
+
+</body>
+</html>
+                                                 
