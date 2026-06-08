@@ -16,7 +16,7 @@
     --bg:#fcfcfb; --bg-soft:#f4f3f0; --bg-card:#ffffff;
     --ink:#16150f; --ink-soft:#494740; --muted:#8c897f;
     --line:#e6e4dd; --line-strong:#d4d1c7;
-    --accent:#0f0e0a;
+    --accent:#0f0e0a; --blue:#2a4fd4; --blue-strong:#2241b5; --blue-soft:rgba(42,79,212,.10);
     --radius:18px; --maxw:1140px;
     --shadow:0 1px 2px rgba(0,0,0,.04),0 18px 44px rgba(0,0,0,.06);
   }
@@ -31,7 +31,7 @@
   img{display:block; max-width:100%}
   h1,h2,h3,h4{margin:0; font-weight:600; letter-spacing:-.025em; line-height:1.08}
   p{margin:0}
-  .serif{font-family:"Newsreader",Georgia,serif; font-weight:400; font-style:italic; letter-spacing:0}
+  .serif{font-family:"Newsreader",Georgia,serif; font-weight:400; font-style:italic; letter-spacing:0; color:var(--blue)}
   .container{width:100%; max-width:var(--maxw); margin:0 auto; padding:0 28px}
 
   /* ---------- Nav ---------- */
@@ -40,7 +40,7 @@
   .brand{font-size:19px; font-weight:600; letter-spacing:-.03em}
   .nav-mid{display:flex; gap:30px}
   .nav-mid a{font-size:14.5px; color:var(--ink-soft); transition:color .18s}
-  .nav-mid a:hover,.nav-mid a.active{color:var(--ink)}
+  .nav-mid a:hover,.nav-mid a.active{color:var(--blue)}
   .nav-cta{border:1px solid var(--ink); border-radius:999px; padding:8px 17px; font-size:14px; transition:background .18s,color .18s}
   .nav-cta:hover{background:var(--ink); color:#fff}
   @media(max-width:720px){ .nav-mid{display:none} }
@@ -69,7 +69,7 @@
   .marquee{margin-top:54px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); overflow:hidden; padding:20px 0}
   .marquee-track{display:flex; gap:0; white-space:nowrap; width:max-content; animation:scroll 34s linear infinite}
   .marquee span{font-size:18px; color:var(--ink-soft); padding:0 26px; display:inline-flex; align-items:center; gap:26px}
-  .marquee span::after{content:"✦"; color:var(--muted); font-size:12px}
+  .marquee span::after{content:"✦"; color:#b3c0ef; font-size:12px}
   @keyframes scroll{to{transform:translateX(-50%)}}
 
   /* ---------- Section scaffolding ---------- */
@@ -97,7 +97,8 @@
   .work-index .wi-title{font-size:clamp(20px,2.4vw,28px); font-weight:600; letter-spacing:-.02em}
   .work-index .wi-meta{font-size:14px; color:var(--muted)}
   .work-index .wi-arrow{font-size:18px; color:var(--ink); transition:transform .2s}
-  .work-index a:hover .wi-arrow{transform:translate(4px,-4px)}
+  .work-index a:hover .wi-arrow{transform:translate(4px,-4px); color:var(--blue)}
+  .work-index a:hover .wi-title{color:var(--blue)}
   @media(max-width:640px){ .work-index a{grid-template-columns:34px 1fr auto; gap:12px} .work-index .wi-meta{display:none} }
 
   /* ---------- Case study ---------- */
@@ -122,10 +123,10 @@
 
   .rlist{list-style:none; margin:0; padding:0; display:grid; gap:14px; counter-reset:r}
   .rlist li{position:relative; padding-left:46px; font-size:16.5px; line-height:1.55; color:var(--ink-soft); counter-increment:r}
-  .rlist li::before{content:counter(r,decimal-leading-zero); position:absolute; left:0; top:1px; font-size:13px; font-weight:600; color:var(--muted); border:1px solid var(--line-strong); border-radius:999px; width:30px; height:30px; display:flex; align-items:center; justify-content:center}
+  .rlist li::before{content:counter(r,decimal-leading-zero); position:absolute; left:0; top:1px; font-size:13px; font-weight:600; color:var(--blue); background:var(--blue-soft); border:1px solid rgba(42,79,212,.28); border-radius:999px; width:30px; height:30px; display:flex; align-items:center; justify-content:center}
 
   .quote{font-family:"Newsreader",Georgia,serif; font-style:italic; font-size:clamp(22px,3vw,32px); line-height:1.4; color:var(--ink); letter-spacing:-.01em}
-  .quote .mark{color:var(--muted)}
+  .quote .mark{color:var(--blue)}
 
   .sol-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
   .sol{border:1px solid var(--line); border-radius:14px; padding:22px 22px 24px; background:var(--bg-card)}
@@ -146,7 +147,7 @@
   @media(max-width:640px){ .gallery{grid-template-columns:1fr} }
 
   .case-foot{margin-top:38px}
-  .discuss{display:inline-flex; align-items:center; gap:8px; font-size:15px; font-weight:500; border-bottom:1px solid var(--ink); padding-bottom:3px}
+  .discuss{display:inline-flex; align-items:center; gap:8px; font-size:15px; font-weight:500; color:var(--blue); border-bottom:1px solid var(--blue); padding-bottom:3px}
   .discuss .arrow{transition:transform .2s}
   .discuss:hover .arrow{transform:translateX(4px)}
 
@@ -155,7 +156,7 @@
   .contact .kicker{color:#9b988e}
   .contact h2{font-size:clamp(32px,5.4vw,62px); letter-spacing:-.04em; line-height:1.05; max-width:16ch}
   .contact h2 em{font-style:normal; color:#fff}
-  .contact .serif{color:#cfcbbf}
+  .contact .serif{color:#b7c2ee}
   .contact p{margin-top:26px; font-size:18px; line-height:1.6; color:#bdbab0; max-width:52ch}
   .contact-actions{margin-top:38px; display:flex; gap:14px; flex-wrap:wrap; align-items:center}
   .c-mail{font-size:clamp(20px,3vw,30px); font-weight:600; letter-spacing:-.02em; color:#fff; border-bottom:1px solid #55524a; padding-bottom:4px; transition:border-color .2s}
@@ -167,7 +168,7 @@
   .footer{background:var(--ink); color:#85827a; border-top:1px solid #2a2823}
   .footer-inner{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; padding:30px 0; font-size:14px}
 
-  ::selection{background:#16150f; color:#fff}
+  ::selection{background:var(--blue); color:#fff}
 </style>
 </head>
 <body id="top">
@@ -192,7 +193,7 @@
     <h1>Designing products people <span class="serif">actually trust</span> with their health, money &amp; time.</h1>
     <div class="hero-row">
       <div>
-        <p class="hero-lede">I'm Muk Thanyaluck — a Product Designer with a research-first approach, shipping healthcare platforms, HIS systems, and consumer apps. Trained in marketing research, fluent in Japanese.</p>
+        <p class="hero-lede">I'm Muk Thanyaluck — a Product Designer with a research-first approach, shipping healthcare platforms, HIS systems, and consumer apps. Trained in marketing research, with basic conversational Japanese.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#work">See selected work →</a>
           <a class="btn btn-ghost" href="#contact">Get in touch</a>
@@ -265,7 +266,7 @@
           <p class="desc">A blockchain-backed personal health record that gives patients ownership of their medical data.</p>
         </div>
         <div class="case-meta">
-          <div><div class="k">Role</div><div class="v">Product Designer · Lead UX Research</div></div>
+          <div><div class="k">Role</div><div class="v">Product Designer · UX Research</div></div>
           <div><div class="k">Platform</div><div class="v">Mobile App</div></div>
           <div><div class="k">Timeline</div><div class="v">6 months</div></div>
           <div><div class="k">Tools</div><div class="v">Figma, Miro, Maze</div></div>
@@ -316,7 +317,7 @@
 
       <div class="gallery">
         <figure><img src="https://framerusercontent.com/images/PPf9aXRh8eERnmPsyC3NUsQyh4.png" alt="Primary persona" /><figcaption>Primary persona synthesised from 200 survey responses.</figcaption></figure>
-        <figure><img src="https://framerusercontent.com/images/rKIgRoQuBqY7xIvBRfKirhGENw.png" alt="Empathy mapping" /><figcaption>Empathy &amp; affinity mapping in Miro.</figcaption></figure>
+        <figure><img src="research-session-blurred.png" alt="Empathy mapping" /><figcaption>Empathy &amp; affinity mapping in Miro.</figcaption></figure>
         <figure><img src="https://framerusercontent.com/images/cYdQ66V4745J9e0o90KIWVWUxx8.png" alt="Survey design" /><figcaption>Survey design across four behaviour topics (Maze).</figcaption></figure>
         <figure><img src="https://framerusercontent.com/images/PKcNf4zC60Unn96pU8K0anMSuLk.png" alt="Affinity clusters" /><figcaption>Affinity clusters surfacing caregiver behaviour.</figcaption></figure>
       </div>
@@ -335,7 +336,7 @@
           <p class="desc">UX audit and redesign of a one-stop medical-tourism booking platform serving global patients.</p>
         </div>
         <div class="case-meta">
-          <div><div class="k">Role</div><div class="v">Product Designer · UX Audit Lead</div></div>
+          <div><div class="k">Role</div><div class="v">Product Designer · UX Audit</div></div>
           <div><div class="k">Platform</div><div class="v">Responsive Web</div></div>
           <div><div class="k">Timeline</div><div class="v">3 months</div></div>
           <div><div class="k">Tools</div><div class="v">Figma, Miro</div></div>
